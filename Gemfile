@@ -27,11 +27,15 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+gem 'rails_12factor', group: :production
+
 gem 'active_model_serializers'
 gem 'faker'
 gem 'pry-rails'
 gem "twilio-ruby"
 gem "socialization"
+gem 'factory_girl_rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
