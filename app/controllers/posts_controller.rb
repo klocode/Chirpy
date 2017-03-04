@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     render json: @posts
   end
 
-  # scope
+
   def create
     @post = current_user.posts.new(post_params)
     if @post.save

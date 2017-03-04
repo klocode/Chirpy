@@ -14,13 +14,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def follow
-  #   current_user.toggle_follow!(User.find_by(id: params[:id]))
-  # end
-
-  # make following and unfollowing controller
-
-
 
   private
 
