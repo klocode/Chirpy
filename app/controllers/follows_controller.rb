@@ -1,13 +1,14 @@
 class FollowsController < ApplicationController
-  before_action :require_user, only: [:create]
+  before_action :require_user
 
 
   def create
-    current_user.toggle_follow!(User.find_by(id: params[:id]))
-    if current_user.follows?(User.find_by(id: params[:id]))
-      render json: ["#{current_user.username} is now following #{User.find_by(id: params[:id]).username}."]
+    target = User.find_by(id: params[:id])
+    current_user.toggle_follow!(target)
+    if current_user.follows?(target)
+      render json: ["#{current_user.username} is now following #{target.username}."]
     else
-      render json: ["#{current_user.username} has unfollowed #{User.find_by(id: params[:id]).username}."]
+      render json: ["#{current_user.username} has unfollowed #{target.username}."]
     end
   end
 
